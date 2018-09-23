@@ -1,19 +1,20 @@
 class Student
 attr_accessor :first_name
-
+@@all = []
 
 def self.all
-@@students
+@@all
 end
 
-def self.find(name)
-@@students.all.slesct {|student| student.first_name == name}
+def self.find_student(name)
+self.all.select do |student|
+  student.first_name == name
+end
 end
 
-@@students = []
 def initialize(first_name)
   @first_name = first_name
-  @@students << self
+  @@all << self
 end
 
 def add_boating_test(name, status, instructor)

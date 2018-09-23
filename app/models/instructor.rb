@@ -1,15 +1,15 @@
 class Instructor
 attr_accessor :name
 
-@@instructors = []
+@@all = []
 
 def self.all
-@@instructors
+@@all
 end
 
 def initialize(name)
   @name = name
-  @@instructors << self
+  @@all << self
 end
 
 def pass_student(first_name, test_name)
